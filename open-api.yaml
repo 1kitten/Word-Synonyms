@@ -1,0 +1,35 @@
+swagger: 2.0.0
+info:
+  title: Words synonyms founder 1.0
+  version: 1.0.0
+tags:
+  - name: word
+    description: Analyze your word
+paths:
+  /api/v1/word_synonyms:
+    post:
+      summary: Method to get synonyms of word(s)
+      tags:
+        - word
+      parameters:
+        - in: body
+          name: get synonyms of words
+          schema:
+            $ref: "#/components/schemas/Word"
+      responses:
+        200:
+          description: Successfully got synonyms for words
+        400:
+          description: Validation error, user POST request was pasted with bad json format
+components:
+  schemas:
+    Word:
+      type: object
+      required:
+        - words
+      properties:
+        words:
+          type: array
+          items:
+            type: string
+          example: ["Dog", "Cat", "World"]
