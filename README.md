@@ -46,6 +46,6 @@ python main.py
 ```json
 {
   "status": "error",
-  "message" "Error message"
+  "message": "Error message"
 }
 ```
